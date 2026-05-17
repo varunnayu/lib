@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Library Panel</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <aside class="sidebar">
+
+    <h2>📚 Library</h2>
+
+    <button onclick="showSection('dashboard')">
+      Dashboard
+    </button>
+
+    <button onclick="showSection('books')">
+      Manage Books
+    </button>
+
+    <button onclick="showSection('issuedBooks')">
+      Issued Books
+    </button>
+
+  </aside>
+
+  <main class="main">
+
+    <!-- DASHBOARD -->
+
+    <section id="dashboard">
+
+      <h1>Admin Dashboard</h1>
+
+      <div class="cards">
+
+        <div class="card">
+          <h2 id="totalBooks">0</h2>
+          <p>Total Books</p>
+        </div>
+
+        <div class="card">
+          <h2 id="availableBooks">0</h2>
+          <p>Available Books</p>
+        </div>
+
+        <div class="card">
+          <h2 id="issuedCount">0</h2>
+          <p>Issued Books</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- BOOKS -->
+
+    <section id="books" class="hidden">
+
+      <div class="top">
+
+        <h1>Manage Books</h1>
+
+        <button onclick="openModal()">
+          + Add Book
+        </button>
+
+      </div>
+
+      <input
+        type="text"
+        id="search"
+        placeholder="Search books..."
+        onkeyup="searchBooks()"
+      >
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>ID</th>
+            <th>Book</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+          </tr>
+
+        </thead>
+
+        <tbody id="bookTable"></tbody>
+
+      </table>
+
+    </section>
+
+    <!-- ISSUED BOOKS -->
+
+    <section id="issuedBooks" class="hidden">
+
+      <h1>Issued Books</h1>
+
+      <input
+        type="text"
+        id="issueSearch"
+        placeholder="Search by Name, USN or Book..."
+        onkeyup="searchIssuedBooks()"
+      >
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>Student Name</th>
+            <th>USN</th>
+            <th>Email</th>
+            <th>Book</th>
+            <th>Date</th>
+          </tr>
+
+        </thead>
+
+        <tbody id="issuedTable"></tbody>
+
+      </table>
+
+    </section>
+
+  </main>
+
+</div>
+
+<!-- MODAL -->
+
+<div class="modal hidden" id="modal">
+
+  <div class="modal-content">
+
+    <h2>Add Book</h2>
+
+    <input type="text" id="title" placeholder="Book Title">
+
+    <input type="text" id="author" placeholder="Author">
+
+    <input type="text" id="category" placeholder="Category">
+
+    <input type="number" id="quantity" placeholder="Quantity">
+
+    <button onclick="addBook()">
+      Save Book
+    </button>
+
+    <button class="close" onclick="closeModal()">
+      Close
+    </button>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

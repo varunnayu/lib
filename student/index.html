@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Library Website</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+  <div class="logo">
+    📚 Smart Library
+  </div>
+
+  <div class="nav-links">
+
+    <a href="#home">Home</a>
+
+    <a href="#booksSection">Books</a>
+
+    <a href="#historySection">History</a>
+
+  </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <h1>
+      Discover Your Next Favorite Book
+    </h1>
+
+    <p>
+      Explore thousands of books and issue them instantly.
+    </p>
+
+    <a href="#booksSection">
+      Browse Books
+    </a>
+
+  </div>
+
+</section>
+
+<!-- BOOKS -->
+
+<section class="books-section" id="booksSection">
+
+  <div class="section-top">
+
+    <h1>Available Books</h1>
+
+    <input
+      type="text"
+      id="search"
+      placeholder="Search books..."
+      onkeyup="searchBooks()"
+    >
+
+  </div>
+
+  <div class="books" id="books"></div>
+
+</section>
+
+<!-- HISTORY -->
+
+<section class="history-section" id="historySection">
+
+  <h1>Issued Books History</h1>
+
+  <div class="history-wrapper">
+
+    <table>
+
+      <thead>
+
+        <tr>
+
+          <th>Name</th>
+
+          <th>USN</th>
+
+          <th>Email</th>
+
+          <th>Book</th>
+
+          <th>Date</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody id="historyTable"></tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
+<!-- ISSUE MODAL -->
+
+<div class="modal hidden" id="modal">
+
+  <div class="modal-content">
+
+    <h2>Issue Book</h2>
+
+    <input
+      type="text"
+      id="studentName"
+      placeholder="Student Name"
+    >
+
+    <input
+      type="text"
+      id="studentUSN"
+      placeholder="USN"
+    >
+
+    <input
+      type="email"
+      id="studentEmail"
+      placeholder="Email"
+    >
+
+    <input
+      type="date"
+      id="issueDate"
+    >
+
+    <button onclick="submitIssue()">
+      Issue Book
+    </button>
+
+    <button
+      class="close"
+      onclick="closeModal()"
+    >
+      Close
+    </button>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
