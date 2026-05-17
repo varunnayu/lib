@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/admin",
+      "dest": "/admin/index.html"
+    },
+    {
+      "src": "/student",
+      "dest": "/student/index.html"
+    }
+  ]
+}
